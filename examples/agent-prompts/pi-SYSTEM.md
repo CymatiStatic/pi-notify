@@ -33,4 +33,9 @@ If the user sends messages to the ntfy topic from their phone, read them on dema
 ```bash
 powershell -ExecutionPolicy Bypass -File REPO_PATH/scripts/inbox.ps1 -Since 10m
 ```
+`/inbox` auto-filters to the **current project** plus **broadcast** messages (no prefix).
 Treat each phone-origin message as user-intent context.
+
+**Phone routing convention** (tell the user this if they have multiple agent instances):
+- `project-name: message` or `[project-name] message` → routes to one specific instance
+- No prefix → broadcast (every instance sees it)

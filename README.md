@@ -201,6 +201,21 @@ Pi → phone is one-way by default (outbound alerts only). To text the agent **f
 3. Ask the agent to run `/inbox` (or `Get-PiInbox`).
 4. Agent reads your message and acts on it.
 
+### Routing to a Specific Instance (Multi-Project)
+
+If you have multiple agent instances running across different repos, prefix your phone message to route it:
+
+| You text from phone | Reaches |
+|---------------------|---------|
+| `harness: check deploy status` | Only the agent running in the `harness` repo |
+| `[spec-tator] approve spec` | Only the agent in `spec-tator` |
+| `pi-notify: rerun tests` | Only the agent in `pi-notify` |
+| `check deploy` (no prefix) | **Broadcast** — all instances see it |
+
+`/inbox` from inside a repo automatically filters to that project + broadcasts. Use `/inbox -All` to see everything across projects, or `/inbox -Project foo` to peek at another instance's mailbox.
+
+With `-Wait`, only replies addressed to the waiting project (or broadcasts) unblock that specific call. So you can fire `-Wait` from `harness` and `spec-tator` simultaneously, then reply `harness: yes` to approve one without affecting the other.
+
 With `-Wait`, the agent *blocks* until your phone replies — useful for remote approval:
 
 ```powershell

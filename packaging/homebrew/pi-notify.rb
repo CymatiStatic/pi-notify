@@ -5,9 +5,9 @@
 class PiNotify < Formula
   desc "Cross-channel alerts for agentic AI workflows (sound, ntfy, Discord, Slack, Telegram, Pushover)"
   homepage "https://github.com/CymatiStatic/pi-notify"
-  url "https://github.com/CymatiStatic/pi-notify/archive/refs/tags/v0.2.0.tar.gz"
+  url "https://github.com/CymatiStatic/pi-notify/archive/refs/tags/v0.2.1.tar.gz"
   # Placeholder sha256 — auto-filled by `brew create` or `brew fetch --build-from-source`
-  sha256 "REPLACE_WITH_SHA256_OF_v0.2.0.tar.gz"
+  sha256 "REPLACE_WITH_SHA256_OF_v0.2.1.tar.gz"
   license "MIT"
   head "https://github.com/CymatiStatic/pi-notify.git", branch: "main"
 

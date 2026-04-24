@@ -5,6 +5,20 @@ All notable changes to pi-notify are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] — 2026-04-24
+
+### Added
+- **Multi-instance routing** — phone messages can be addressed to a specific agent
+  instance via `project-name:` or `[project-name]` prefix; untagged messages broadcast
+  to all instances
+- **`inbox.ps1 -All`** — show messages across every project (overrides auto-filter)
+- **`inbox.ps1 -Project <name>`** — peek at another instance's mailbox without `cd`
+- **`-Wait` routing** — only replies addressed to the waiting project (or broadcasts)
+  unblock that call, so you can run `-Wait` in multiple repos at once and reply
+  selectively from your phone
+- README: Routing-to-Specific-Instance section
+- Pi SYSTEM.md prompt snippet: phone routing convention
+
 ## [0.2.0] — 2026-04-24
 
 ### Added
@@ -44,5 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Drop-in agent prompts for Pi, Claude Code, Cursor
 - PSScriptAnalyzer + parse-check CI workflow
 
+[0.2.1]: https://github.com/CymatiStatic/pi-notify/releases/tag/v0.2.1
 [0.2.0]: https://github.com/CymatiStatic/pi-notify/releases/tag/v0.2.0
 [0.1.0]: https://github.com/CymatiStatic/pi-notify/releases/tag/v0.1.0

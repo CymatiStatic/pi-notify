@@ -206,7 +206,15 @@ if ($Wait) {
                     $m = $line | ConvertFrom-Json -ErrorAction Stop
                     # Skip our own outbound messages
                     if ($m.title -and $m.title -match '^Agent') { continue }
+                    # Routing: only accept replies addressed to this project (or broadcast/untagged)
                     $reply = $m.message
+                    $proj = $projectName.ToLower()
+                    if ($reply -match '^\s*\[([\w\.-]+)\]\s*(.*)$' -or $reply -match '^\s*([\w\.-]+)\s*:\s*(.+)$') {
+                        $target = $Matches[1].ToLower()
+                        $body2  = $Matches[2]
+                        if ($target -ne $proj) { continue }   # not for me
+                        $reply = $body2
+                    }
                     Write-Output $reply
                     $low = $reply.ToLower().Trim()
                     switch -Regex ($low) {

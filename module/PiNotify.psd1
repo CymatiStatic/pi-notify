@@ -1,6 +1,6 @@
 @{
     RootModule        = 'PiNotify.psm1'
-    ModuleVersion     = '0.2.0'
+    ModuleVersion     = '0.2.1'
     GUID              = 'b7c9e3f4-1a2d-4b6e-9f3c-8a7d6e5b4c3d'
     Author            = 'CymatiStatic'
     CompanyName       = 'CymatiStatic'

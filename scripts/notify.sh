@@ -175,8 +175,11 @@ if [[ "$WAIT" == "true" ]]; then
     body=$(curl -s --max-time 4 "$NTFY_SERVER/$NTFY_TOPIC/json?poll=1&since=${start_ts}" 2>/dev/null || true)
     if [[ -n "$body" ]]; then
       # Find first message that is NOT from us (title starts with "Agent")
+      project="$(detect_project)"
       reply=$(echo "$body" | python3 -c "
-import sys,json
+import sys,json,re
+proj='${project}'.lower() if False else '${project}'
+proj=proj.lower()
 for line in sys.stdin:
     line=line.strip()
     if not line: continue
@@ -185,7 +188,14 @@ for line in sys.stdin:
     t=m.get('title','')
     msg=m.get('message','')
     if t.startswith('Agent'): continue
-    print(msg); break
+    # Parse routing prefix: '[project] body' or 'project: body'
+    mt=re.match(r'^\s*\[([\w\.-]+)\]\s*(.*)$', msg) or re.match(r'^\s*([\w\.-]+)\s*:\s*(.+)$', msg)
+    if mt:
+        target=mt.group(1).lower(); body_=mt.group(2)
+        if target != proj: continue   # not for me
+        print(body_); break
+    else:
+        print(msg); break   # broadcast
 " 2>/dev/null)
       if [[ -n "$reply" ]]; then
         echo "$reply"
