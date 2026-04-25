@@ -43,7 +43,7 @@ Agent [pomofocus-webhook]   Deploy failed — check logs ← priority 5, bypasse
 ## Preview
 
 <div align="center">
-<img src="assets/social-1280x640.png" width="720" alt="pi-pager preview"/>
+<img src="assets/social-preview.png" width="720" alt="pi-pager preview"/>
 </div>
 
 > **Note:** Live screenshots of the toast, phone push, and ntfy inbox coming soon — see [Roadmap](#roadmap). PRs with screenshots welcome.
