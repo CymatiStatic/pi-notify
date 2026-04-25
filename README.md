@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo-256.png" width="160" alt="pi-pager logo"/>
+<img src="assets/logo.png" alt="pi-pager" width="160">
 
 # pi-pager
 

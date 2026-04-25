@@ -1,36 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#a855f7"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect width="512" height="512" rx="96" fill="url(#bgGrad)"/>
-  <!-- Bell body -->
-  <g filter="url(#glow)">
-    <path d="M256 110
-             c-70 0 -125 55 -125 125
-             v70
-             c0 15 -10 28 -22 40
-             h294
-             c-12 -12 -22 -25 -22 -40
-             v-70
-             c0 -70 -55 -125 -125 -125 z"
-          fill="white" stroke="#1f1145" stroke-width="6"/>
-    <!-- Clapper -->
-    <circle cx="256" cy="380" r="24" fill="white" stroke="#1f1145" stroke-width="6"/>
-    <!-- Handle on top -->
-    <rect x="244" y="84" width="24" height="32" rx="6" fill="white" stroke="#1f1145" stroke-width="6"/>
-  </g>
-  <!-- Pulse rings (sound waves) -->
-  <g fill="none" stroke="white" stroke-width="8" stroke-linecap="round" opacity="0.9">
-    <path d="M100 190 q-22 36 0 82"/>
-    <path d="M68 158 q-38 64 0 146"/>
-    <path d="M412 190 q22 36 0 82"/>
-    <path d="M444 158 q38 64 0 146"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background: deep near-black -->
+  <rect width="512" height="512" rx="112" fill="#0A0A0B"/>
+
+  <!-- Subtle inner border for app-icon depth -->
+  <rect x="2" y="2" width="508" height="508" rx="111" fill="none" stroke="#1A1A1F" stroke-width="1"/>
+
+  <!-- Big monospace π glyph, custom-drawn for crisp rendering at any size -->
+  <!-- Top horizontal bar -->
+  <rect x="112" y="160" width="288" height="36" rx="2" fill="#F5F5F0"/>
+  <!-- Left leg -->
+  <rect x="156" y="196" width="36" height="180" rx="2" fill="#F5F5F0"/>
+  <!-- Right leg with foot curl -->
+  <rect x="320" y="196" width="36" height="148" rx="2" fill="#F5F5F0"/>
+  <rect x="320" y="344" width="56" height="32" rx="2" fill="#F5F5F0"/>
+
+  <!-- Notification badge: amber dot in upper-right, classic iOS-style -->
+  <circle cx="412" cy="112" r="44" fill="#0A0A0B"/>
+  <circle cx="412" cy="112" r="34" fill="#FFB454"/>
+  <!-- Tiny inner highlight to give the dot life -->
+  <circle cx="402" cy="102" r="8" fill="#FFCB7E" opacity="0.6"/>
 </svg>

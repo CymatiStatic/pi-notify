@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" fill="none">
+  <!-- Black background -->
+  <rect width="1280" height="640" fill="#0A0A0B"/>
+
+  <!-- Very subtle scanline / texture, decorative only -->
+  <g opacity="0.03">
+    <line x1="0" y1="100" x2="1280" y2="100" stroke="#FFB454" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1280" y2="200" stroke="#FFB454" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1280" y2="300" stroke="#FFB454" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1280" y2="400" stroke="#FFB454" stroke-width="1"/>
+    <line x1="0" y1="500" x2="1280" y2="500" stroke="#FFB454" stroke-width="1"/>
+  </g>
+
+  <!-- Terminal window -->
+  <g transform="translate(64, 76)">
+    <!-- Window body -->
+    <rect x="0" y="0" width="1152" height="488" rx="14" fill="#141416" stroke="#262629" stroke-width="1"/>
+
+    <!-- Title bar -->
+    <rect x="0" y="0" width="1152" height="44" rx="14" fill="#1C1C1F"/>
+    <rect x="0" y="30" width="1152" height="14" fill="#1C1C1F"/>
+
+    <!-- macOS-style window dots -->
+    <circle cx="24" cy="22" r="7" fill="#FF5F57"/>
+    <circle cx="48" cy="22" r="7" fill="#FEBC2E"/>
+    <circle cx="72" cy="22" r="7" fill="#28C840"/>
+
+    <!-- Title bar text, centered -->
+    <text x="576" y="28" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace" font-size="14" fill="#7A7A7F" text-anchor="middle" font-weight="500">~/projects/api — pi</text>
+
+    <!-- Terminal content -->
+    <g font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace" font-size="20">
+
+      <!-- Prompt line 1 -->
+      <text x="32" y="92" fill="#5A5A5F">$</text>
+      <text x="56" y="92" fill="#F5F5F0">pi</text>
+
+      <!-- Prompt line 2 - user input -->
+      <text x="32" y="124" fill="#FFB454">pi&gt;</text>
+      <text x="80" y="124" fill="#F5F5F0">refactor auth flow, drop legacy session module</text>
+
+      <!-- Activity lines -->
+      <text x="48" y="172" fill="#5A5A5F">→</text>
+      <text x="80" y="172" fill="#9A9A95">analyzing src/auth/...</text>
+
+      <text x="48" y="204" fill="#5A5A5F">→</text>
+      <text x="80" y="204" fill="#9A9A95">writing src/auth/oauth.ts</text>
+
+      <!-- pi-pager box -->
+      <text x="48" y="260" fill="#FFB454">╭─ pi-pager: approval required ──────────────────────╮</text>
+      <text x="48" y="288" fill="#FFB454">│</text>
+      <text x="80" y="288" fill="#F5F5F0">delete legacy src/auth/session.ts ?</text>
+      <text x="722" y="288" fill="#FFB454">│</text>
+
+      <text x="48" y="316" fill="#FFB454">│</text>
+      <text x="722" y="316" fill="#FFB454">│</text>
+
+      <text x="48" y="344" fill="#FFB454">│</text>
+      <text x="80" y="344" fill="#5A5A5F">→</text>
+      <text x="112" y="344" fill="#9A9A95">pushed to phone + watch via ntfy</text>
+      <text x="722" y="344" fill="#FFB454">│</text>
+
+      <text x="48" y="372" fill="#FFB454">│</text>
+      <text x="80" y="372" fill="#5A5A5F">→</text>
+      <text x="112" y="372" fill="#9A9A95">waiting on reply...</text>
+      <text x="722" y="372" fill="#FFB454">│</text>
+
+      <text x="48" y="400" fill="#FFB454">╰────────────────────────────────────────────────────╯</text>
+
+      <!-- Reply line -->
+      <text x="48" y="448" fill="#28C840">✓</text>
+      <text x="80" y="448" fill="#F5F5F0">[no]</text>
+      <text x="140" y="448" fill="#9A9A95">from iPhone in 4.2s — keeping session.ts</text>
+    </g>
+  </g>
+
+  <!-- Wordmark + tagline below terminal, bottom-right anchored -->
+  <g transform="translate(1216, 600)" text-anchor="end">
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace" font-size="22" font-weight="700" fill="#F5F5F0" letter-spacing="-0.5">pi-pager</text>
+    <text x="0" y="22" font-family="ui-monospace, 'JetBrains Mono', 'Cascadia Code', Menlo, Consolas, monospace" font-size="13" fill="#7A7A7F" letter-spacing="0.2">phone + watch bridge for coding agents</text>
+  </g>
+
+  <!-- Small notification dot on the wordmark side, echo of the logo mark -->
+  <circle cx="1226" cy="588" r="4" fill="#FFB454"/>
+</svg>

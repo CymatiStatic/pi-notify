@@ -21,3 +21,6 @@ desktop.ini
 
 # PowerShell module cache
 **/PSScriptAnalyzerResults.xml
+
+# Source design files (kept locally, not committed)
+assets/pi-pager design files - V2/
